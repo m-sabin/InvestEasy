@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_900"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="InvestEasy"
+        android:textColor="@color/primary_400"
+        android:textSize="35sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="O valor recibido ao final do investimento será de:"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_valor_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/primary_400"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_valor_total"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/tv_title_rend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Valor rendimentos:"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_valor_total" />
+
+    <TextView
+        android:id="@+id/tv_rend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/primary_400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_rend"
+        tools:text="0.0" />
+
+    <TextView
+        android:id="@+id/tv_aport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Aporte por mês:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/til_parent_valor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rend" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_parent_valor"
+        style="@style/EditTextNoBorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        app:cursorColor="@color/white"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rend">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_valor"
+            style="@style/EditTextNoBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserir o valor $"
+            android:inputType="number"
+            android:padding="30dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_qtdmeses"
+        style="@style/EditTextNoBorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Qtd de mêses:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/til_parent_valor"
+        app:layout_constraintTop_toBottomOf="@+id/til_parent_valor" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_parent_qtdmeses"
+        style="@style/EditTextNoBorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        app:cursorColor="@color/white"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_parent_valor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_qtdmeses"
+            style="@style/EditTextNoBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserir Num Meses"
+            android:inputType="number"
+            android:padding="30dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_juros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Juros %"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/til_parent_valor"
+        app:layout_constraintTop_toBottomOf="@+id/til_parent_qtdmeses" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_parent_juros"
+        style="@style/EditTextNoBorder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="40dp"
+        android:textColorHint="@color/white"
+        app:cursorColor="@color/white"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_parent_qtdmeses">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_juros"
+            style="@style/EditTextNoBorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Inserir Juros"
+            android:inputType="numberDecimal"
+            android:padding="30dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="25sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_clean"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="limpar"
+        android:textColor="@color/primary_400"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/primary_400" />
+
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@color/primary_400"
+        android:text="calcular"
+        android:textColor="@color/primary_900"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
